@@ -1,4 +1,4 @@
-import { useContext, useState, Fragment} from "react";
+import { useContext, useState, Fragment } from "react";
 
 import CartItem from "./CartItem";
 import CartContext from "../../store/cart-context";
@@ -12,7 +12,7 @@ const Cart = (props) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [didSubmit, setDidSubmit] = useState(false);
   const cartCtx = useContext(CartContext);
-  const [checkout, setCheckOut] = useState(false);
+ 
 
   const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
   const hasItems = cartCtx.items.length > 0;
@@ -39,7 +39,7 @@ const Cart = (props) => {
         }),
       }
     );
-    
+
     setIsSubmitting(false);
     setDidSubmit(true);
     cartCtx.clearCart();
@@ -62,7 +62,7 @@ const Cart = (props) => {
 
   const modalActions = (
     <div className={classes.actions}>
-      <button className={classes['button--alt']} onClick={props.onClose}>
+      <button className={classes["button--alt"]} onClick={props.onClose}>
         Close
       </button>
       {hasItems && (
@@ -93,10 +93,10 @@ const Cart = (props) => {
     <Fragment>
       <p>Successfully sent the order!</p>
       <div className={classes.actions}>
-      <button className={classes.button} onClick={props.onHideCart}>
-        Close
-      </button>
-    </div>
+        <button className={classes.button} onClick={props.onHideCart}>
+          Close
+        </button>
+      </div>
     </Fragment>
   );
 
